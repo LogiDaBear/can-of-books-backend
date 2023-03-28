@@ -62,6 +62,7 @@ async function getBooks(request, response, next){
 }
 
 //***ENDPOINT TO DELETE */
+
 app.delete('/books/:bookID', deleteBook);
 
 async function deleteBook(request,response,next){
@@ -75,6 +76,20 @@ async function deleteBook(request,response,next){
     next(error);
   }
 };
+
+//***ENDPOINT TO POST
+
+app.post('/books', postBook);
+
+async function postBook(request, response,next){
+  try {
+    let createdBook = await Book.create(request.body);
+
+    response.status(201).send(createdBook);
+  } catch (error) {
+    next(error);
+  }
+}
 
 
 app.get('*', (request, response) => {
