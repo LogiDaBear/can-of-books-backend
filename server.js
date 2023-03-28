@@ -61,6 +61,21 @@ async function getBooks(request, response, next){
   }
 }
 
+//***ENDPOINT TO DELETE */
+app.delete('/books/:bookID', deleteBook);
+
+async function deleteBook(request,response,next){
+  try{
+    let id = request.params.bookID;
+
+    await Book.findByIdAndDelete(id);
+
+    response.status(200).send('Book deleted successfully!');
+  } catch(error) {
+    next(error);
+  }
+};
+
 
 app.get('*', (request, response) => {
   response.status(404).send('Not Found!');
