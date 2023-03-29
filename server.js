@@ -36,7 +36,7 @@ db.once('open', function () {
 
 
 
-//ENDPOINTS
+//ENDPOINT TO GET
 
 app.get('/', (request, response) => {
 
