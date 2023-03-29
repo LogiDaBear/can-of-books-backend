@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -81,12 +79,16 @@ async function deleteBook(request,response,next){
 
 app.post('/books', postBook);
 
-async function postBook(request, response,next){
+async function postBook(request, response, next){
   try {
     let createdBook = await Book.create(request.body);
 
+    console.log("request body", request.body);
+
     response.status(201).send(createdBook);
+
   } catch (error) {
+    console.error(error);
     next(error);
   }
 }
