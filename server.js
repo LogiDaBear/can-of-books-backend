@@ -15,6 +15,9 @@ const app = express();
 // Middleware
 app.use(cors());
 
+// body parser
+app.use(express.json());
+
 //Define Port
 const PORT = process.env.PORT || 3002;
 
@@ -80,10 +83,11 @@ async function deleteBook(request,response,next){
 app.post('/books', postBook);
 
 async function postBook(request, response, next){
+  console.log("request body", request.body);
   try {
     let createdBook = await Book.create(request.body);
 
-    console.log("request body", request.body);
+    
 
     response.status(201).send(createdBook);
 
@@ -93,6 +97,22 @@ async function postBook(request, response, next){
   }
 }
 
+//ENDPOINT TO UPDATE
+app.put('/books/:bookID', updateBook);
+
+async function updateBook(request, response, next){
+  try {
+    let id = request.params.bookID;
+    let data = request.body;
+
+    const updatedBook = await Book.findByIdAndUpdate(id, data, {new: true, overwrite: true});
+
+    response.status(200).send(updatedBook);
+    
+  } catch(error) {
+    next(error);
+  }
+}
 
 app.get('*', (request, response) => {
   response.status(404).send('Not Found!');
