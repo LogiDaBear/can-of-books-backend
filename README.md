@@ -55,3 +55,23 @@ Make a list of each parson’s strengths.
   - Talk about it and come up with a plan
   10. How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
   - We explain to eachother with what we are implementing line by line or what we are working on at the time. Using VS LiveShare is a game changer.
+
+# Can of Books
+
+**Author**: Ryan A. and Logan R.
+**Version**: 1.3.0 (increment the patch/fix version number if you make more commits past your first submission)
+
+## Overview
+  Can of Books is an app that allows you to add, update, and delete books of your liking
+
+## Getting Started
+  Team plan, implement code, debug/console log, complete
+
+## Architecture
+  Add features for updating books
+
+## Change Log
+  Lab 13
+
+## Credit and Collaborations
+  Audrey and TA's!
