@@ -75,3 +75,17 @@ Make a list of each parson’s strengths.
 
 ## Credit and Collaborations
   Audrey and TA's!
+
+-------------------------------------------------------------------------------
+
+## Time Estimates
+
+  Name of feature: _____update_________
+
+  Estimate of time needed to complete: __2hr___
+
+  Start time: __5pm___
+
+  Finish time: __8:30pm___
+
+  Actual time needed to complete: __3hr__
